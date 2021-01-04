@@ -19,7 +19,7 @@ class image:
     def paste(self, name):
         # Copying profile picture
         im2 = Image.open(f'pfps/{name}.jpg')
-        im2.resize((256, 256))
+        im2 = im2.resize((256, 256))
         self.im.paste(im2, (312, 40))    
 
     def show(self):
