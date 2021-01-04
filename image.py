@@ -16,18 +16,19 @@ class image:
         self.txt = txt # Changing the value of the self.txt variable
         print("Reset \"txt\" variable to", txt) # Printing to the screen
 
-    def reset(self):
-        # Pasting a black rectangle exactly matching the area where text is put
-        # In order to reset the picture to and add more text
-        self.im.paste(Image.new('RGB', (621, 63), (0, 0, 0)), (274, 752))
+    def paste(self, name):
+        # Copying profile picture
+        im2 = Image.open(f'pfps/{name}.jpg')
+        im2.resize((256, 256))
+        self.im.paste(im2, (312, 40))    
 
     def show(self):
         # Showing image (mainly debugging/testing purposes)
         self.im.show()
         print("Showing image...") # Printing confirmation to the screen
 
-    def write(self, x=285, y=768, r=275, g=255, b=255): # Preset values (but still able to change for debugging purposes)
-        font = ImageFont.truetype('fonts/ArialCE.ttf', self.txt_len*5) # Select arial as the font
+    def write(self, x=208, y=562, r=275, g=255, b=255): # Preset values (but still able to change for debugging purposes)
+        font = ImageFont.truetype('fonts/ArialCE.ttf', 36) # Select arial as the font
         self.im_draw.text((x, y), self.txt, (r, g, b), font=font) # Drawing text on the image
         print("Text drawn!") # Printing confirmation to the screen
 
@@ -39,7 +40,7 @@ class image:
         return rand_name # Returning random name for later deletion of the image
 
 # TODO
-# Actually utilize the benefits of OOP by adding subclasses for each template
+# Actually utilize the benefits of OOPs by adding subclasses for each template
 # Use polymorphism with the write() and reset() methods
 # Add more meme templates
 # Robust error handling when inputting strings       
