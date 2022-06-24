@@ -14,7 +14,7 @@ import os
 import requests
 
 # Token
-token = "NDE4OTQ0NTU2MTY4NTExNDk0.X_AEtg.pjWkSLrdSsdDak18yWLteOQmmQY"
+token = "YOUR_TOKEN"
 
 # Declaring bot (command_prefix doesn't really matter)
 bot = commands.Bot(command_prefix="!", self_bot=True)
